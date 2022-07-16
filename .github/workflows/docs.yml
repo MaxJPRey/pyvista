@@ -96,10 +96,10 @@ jobs:
           key: autosummary-rst-${{ hashFiles('pyvista/_version.py') }}
 
       - name: Check Documentation Link
-        run: make -C doc linkcheck SPHINXOPTS="-W --keep-going"
+        run: make -C doc linkcheck
 
       - name: Build Documentation
-        run: make -C doc html SPHINXOPTS=" -W --keep-going"
+        run: make -C doc html SPHINXOPTS="-W --keep-going"
 
       - name: Tar build
         run: tar -zcvf docs-build.tar.gz doc/_build/
